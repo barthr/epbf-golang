@@ -26,7 +26,7 @@ func unlimitLockedMemory() error {
 	})
 }
 
-//go:generate go run github.com/cilium/ebpf/cmd/bpf2go bpf xdp.kern.c -- -I./libbpf/src
+//go:generate go run github.com/cilium/ebpf/cmd/bpf2go bpf xdp.kern.c -- -I../libbpf/src -I../common
 func main() {
 	if len(os.Args) < 2 {
 		log.Fatalf("Please specify a network interface")
